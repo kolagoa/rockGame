@@ -1,8 +1,66 @@
 body
 {
     background-color: aqua;
+    font-size: larger;
+    padding: 3em;
+    margin: 3em;
+    text-align: center;
+
+}
+.notices{
+    background-color: white;
+    color: blue;
+    text-align: center;
+}
+.bestOfNumber{
+    padding: 3px;
+    margin: 2px;
+text-align: center;
+}
+.btnPlay{
+    display: block;
+    text-align: center;
+    padding: 2px;
+    margin: 3px;
+    background-color: lightseagreen;
+}
+.human{
+    padding: 3px;
+    margin: 2px;  
+}
+.results{
+    padding: 1em;
+    margin: 1em;
+    text-align: center;
+    background-color: darkgreen;
+    color: white;
+    font-size: larger;
+    font-style: normal;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.overall{
+    padding: 1em;
+    margin: 1em;
+    text-align: center;
+    background-color: black;
+    color: white;
     font-size: medium;
-    padding: 5em;
-    margin: 5em;
+    font-style: italic;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.container{
+    padding: 6px;
+    margin: 6px;
+    background-color: yellow;
+}
+.title
+{
+    padding: 1em;
+    margin: 1em;
+    background-color: darkgreen;
+    color: white;
+    font-size: medium;
+    font-style: italic;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 
 }
