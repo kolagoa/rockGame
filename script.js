@@ -29,28 +29,38 @@ return choiceOptions[random];
 
 }
 function resetGame(){
+
+    //rest the page for next game //
+//enable the best of text box//
     document.getElementById("bestOfNumber").readOnly = false;
+    
+//clear other div used //
     const result = document.querySelector('#results');
     const overall = document.querySelector('#overall');
+    const playedNo = document.querySelector('#playedNo');
+    const playedLeft = document.querySelector('#playedLeft');
 
     result.textContent='';
     overall.textContent='';
+    playedNo.textContent='';
+    playedLeft.textContent='';
+
+    //reset the wins and number played
     humanWin=0;
     computerWin=0 ;
-    humanChoice='';
-    computerChoice=''
-
-    
 
 }
 function bestGame()
 {
-     
+     //displayed best of input while gave is ongoing //
     document.getElementById("bestOfNumber").readOnly = true;
+
+    //get best of
     let  bestOfNumber = parseInt(
          document.getElementById('bestOfNumber').value );
 
     if(computerWin+humanWin < bestOfNumber) {
+//compare number played vs best of and play the game //
 
         let computerChoice =computerPlay();
         let humanChoice = document.getElementById('human').value; 
@@ -58,19 +68,11 @@ function bestGame()
         const result = document.querySelector('#results');
         const overall = document.querySelector('#overall');
 
-
-        
-        result.textContent =        feedBack  ;
-    
-
-         overall.textContent =
-         
-           ' Computer Wins = '+
-           computerWin + 
-         '\n '+ ' Your Wins = ' + humanWin;
-
-    }
-    else
+        result.textContent = feedBack;
+        overall.textContent =' Computer Wins = '+
+           computerWin + '\n '+ ' Your Wins = ' + humanWin;
+ }
+ else
     {
         if(computerWin>humanWin)
         {
