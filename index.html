@@ -7,10 +7,49 @@
     <title>Game</title>
  
 <link rel="stylesheet" href="styles.css">
-<script src="script.js" ></script>
+
 
 </head>
+
 <body>
+ 
+
+<div class="title">
+    Play Game
+</div>
+
+<!----------------------------->
+<div class="container">
+    <p>
+       <div>Best of</div>
+       <div>
+             <input value="5" type="number" id="bestOfNumber" class="bestOfNumber">
+             <div id="playedNo" class="notices"></div>
+       </div>
+    </p>
+  <p>Choose Options
+    <select id="human" class="human" >
+        <option>Paper</option>
+        <option>Cissors</option>
+        <option>Rock</option>
+    </select>
+    <div class="btnPlay">
+
+        <button id="btnPlay"  onclick="bestGame()">Click to Play </button>
+        <button id="btnreset"  onclick="resetGame()">Restart Game </button>
+    </div>
+    
+</p>
+
+
+<div for="results">Results</div>    
+<div id="results" class="results"></div>
+<div id="playedLeft" class="notices"></div>
+<div id="overall" class="overall"></div>
+
+</div> 
+<!---------------------------------->
     
 </body>
+<script src="script.js" ></script>
 </html>
