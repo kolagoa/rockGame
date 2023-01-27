@@ -33,7 +33,7 @@ function resetGame(){
     //rest the page for next game //
 //enable the best of text box//
     document.getElementById("bestOfNumber").readOnly = false;
-    
+   
 //clear other div used //
     const result = document.querySelector('#results');
     const overall = document.querySelector('#overall');
@@ -59,8 +59,8 @@ function bestGame()
     let  bestOfNumber = parseInt(
          document.getElementById('bestOfNumber').value );
 
-    if(computerWin+humanWin < bestOfNumber) {
-//compare number played vs best of and play the game //
+ //if(computerWin+humanWin < bestOfNumber) {
+  //compare number played vs best of and play the game //
 
         let computerChoice =computerPlay();
         let humanChoice = document.getElementById('human').value; 
@@ -71,9 +71,9 @@ function bestGame()
         result.textContent = feedBack;
         overall.textContent =' Computer Wins = '+
            computerWin + '\n '+ ' Your Wins = ' + humanWin;
- }
- else
-    {
+// }
+// else
+//    {
         if(computerWin>humanWin)
         {
           const result = document.querySelector('#results');        
@@ -96,7 +96,7 @@ function bestGame()
 
         }
 
-    }
+ //   }
 
     //check number of times played
 
@@ -162,5 +162,85 @@ function playPaperGame(computer, human)
     }
   }
 }
+
+/**Create three buttons, one for each selection -done.
+ *  Add an event listener to the buttons -done 
+ * that call your playRound function 
+ * with the correct playerSelection 
+ * every time a button is clicked. 
+ * (you can keep the console.logs for this step)*/
+
+function playRound(human)
+{
+    let humanselection =human;
+
+      //displayed best of input while gave is ongoing //
+      document.getElementById("bestOfNumber").readOnly = true;
+
+      //get best of
+      let  bestOfNumber = parseInt(
+           document.getElementById('bestOfNumber').value );
+
+           
+
+    if(computerWin+humanWin < bestOfNumber) {
+
+    let computerChoice =computerPlay();
+    let humanChoice = humanselection ; //document.getElementById('human').value; 
+    let feedBack=   playPaperGame(computerChoice,humanChoice);
+    const result = document.querySelector('#results');
+    const overall = document.querySelector('#overall');
+
+    result.textContent = feedBack;
+    overall.textContent =' Computer Wins = '+
+       computerWin + '\n '+ ' Your Wins = ' + humanWin;
+    }  
+ else
+ {
+       if(computerWin>humanWin)
+        {
+          const result = document.querySelector('#results');        
+
+        result.textContent = 'Final Results! Computer Wins';
+
+        }
+        else if (humanWin>computerWin)
+        {
+            const result = document.querySelector('#results');        
+
+        result.textContent = 'Final Results! You Win';
+
+        }
+        else
+        {
+            const result = document.querySelector('#results');        
+
+          result.textContent = "Final Results! It's a Draw";
+
+        }
+    }
+
+}
+
+/***********Listening for button click */
+    // buttons is a node list. It looks and acts much like an array.
+    const buttons = document.querySelectorAll('button');
+
+    // we use the .forEach method to iterate through each button
+    buttons.forEach((button) => 
+    {
+    
+      // and for each one we add a 'click' listener
+      button.addEventListener('click', () => 
+      {
+
+        //do this when button is clicked
+        //call function with human choice    
+        playRound(button.id);
+
+       // alert(button.id);
+      });
+    
+    });
 
  
